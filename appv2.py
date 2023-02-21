@@ -55,9 +55,20 @@ num_correct = 0
 solution = None
 
 root = tk.Tk()
-root.geometry("400x300")
+
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
+
+# Set the window size and position
+window_width = 800
+window_height = 600
+x = (screen_width // 2) - (window_width // 2)
+y = (screen_height // 2) - (window_height // 2)
+root.geometry('{}x{}+{}+{}'.format(window_width, window_height, x, y))
+
+
 root.title("Math Quiz")
-font = tkFont.Font(size=20)
+font = tkFont.Font(size=60)
 
 problem, solution = generate_math_problem()
 
